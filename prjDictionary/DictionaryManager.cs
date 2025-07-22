@@ -35,5 +35,33 @@ namespace prjDictionary
             }
         }
 
+        public void RemoveEntry(string Name)
+        {
+            if (dicPROG7311.ContainsKey(Name))
+            {
+                dicPROG7311.Remove(Name);
+                Console.WriteLine($"Student '{Name}' removed successfully.");
+            }
+            else
+            {
+                Console.WriteLine($"Student '{Name}' not found.");
+            }
+        }
+
+        public void DisplayEntries()
+        {
+            if (dicPROG7311.Count == 0)
+            {
+                Console.WriteLine("No entries in the dictionary.");
+                return;
+            }
+
+            Console.WriteLine("Current entries in the dictionary:");
+            foreach (var entry in dicPROG7311)
+            {
+                Console.WriteLine($"Name: {entry.Key}, Mark: {entry.Value}");
+            }
+        }
+
     }
 }
